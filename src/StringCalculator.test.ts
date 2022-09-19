@@ -1,5 +1,8 @@
 const add = (input:string) => {
-    return 0
+    if(''){
+        return 0
+    } 
+    
 }
 
 describe('StringCalculator', () => {
