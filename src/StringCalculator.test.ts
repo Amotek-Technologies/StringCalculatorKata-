@@ -3,7 +3,7 @@ const add = (input: string): number => {
         return 0
     }
 
-    if (input.length === 1) {
+    if (!input.includes(',')) {
         return +input
     }
 
@@ -25,8 +25,8 @@ describe('StringCalculator', () => {
         expect(add('2,5')).toBe(7)
     })
 
-    it('input=2', () => {
-        expect(add('2')).toBe(2)
+    it('input=25', () => {
+        expect(add('25')).toBe(25)
     })
 
 })
