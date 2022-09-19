@@ -7,7 +7,8 @@ const add = (input: string): number => {
         return +input
     }
 
-    return 7
+    const splitArray =  input.split(',')
+    return +splitArray[0] + +splitArray[1]
 }
 
 describe('StringCalculator', () => {
