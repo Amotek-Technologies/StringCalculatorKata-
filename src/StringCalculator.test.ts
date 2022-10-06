@@ -7,12 +7,16 @@ const add = (input: string): number => {
         return +input
     }
 
-    const splitArray = input.split(',')
+    const splitArrayWithCommon = input.split(',')
+    const splitArraywithNewLine = input.split("\n")
+    console.log(splitArraywithNewLine);
+    
+    
 
     let result = 0
 
-    for (let i = 0; i < splitArray.length; i++) {
-        result += +splitArray[i]
+    for (let i = 0; i < splitArrayWithCommon.length; i++) {
+        result += +splitArrayWithCommon[i]
     }
 
     return result
@@ -38,6 +42,9 @@ describe('StringCalculator', () => {
 
     it('many numbers', () => {
         expect(add('1,2,3,4,5,6')).toBe(21)
+    })
+    it('many numbers with \n', () => {
+        expect(add('1\n2,3,4,5,6')).toBe(21)
     })
 
 })
