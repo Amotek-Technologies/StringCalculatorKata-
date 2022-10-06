@@ -7,8 +7,15 @@ const add = (input: string): number => {
         return +input
     }
 
-    const splitArray =  input.split(',')
-    return +splitArray[0] + +splitArray[1]
+    const splitArray = input.split(',')
+
+    let result = 0
+
+    for (let i = 0; i < splitArray.length; i++) {
+        result += +splitArray[i]
+    }
+
+    return result
 }
 
 describe('StringCalculator', () => {
@@ -27,6 +34,10 @@ describe('StringCalculator', () => {
 
     it('input=25', () => {
         expect(add('25')).toBe(25)
+    })
+
+    it('many numbers', () => {
+        expect(add('1,2,3,4,5,6')).toBe(21)
     })
 
 })
