@@ -6,17 +6,15 @@ const add = (input: string): number => {
     if (!input.includes(',')) {
         return +input
     }
+    input.split(',');
 
-    const splitArrayWithCommon = input.split(',')
-    const splitArraywithNewLine = input.split("\n")
+    const splitArraywithNewLine = input.split("\n").join().split(",");
     console.log(splitArraywithNewLine);
-    
-    
 
     let result = 0
 
-    for (let i = 0; i < splitArrayWithCommon.length; i++) {
-        result += +splitArrayWithCommon[i]
+    for (let i = 0; i < splitArraywithNewLine.length; i++) {
+        result += +splitArraywithNewLine[i]
     }
 
     return result
@@ -43,6 +41,7 @@ describe('StringCalculator', () => {
     it('many numbers', () => {
         expect(add('1,2,3,4,5,6')).toBe(21)
     })
+
     it('many numbers with \n', () => {
         expect(add('1\n2,3,4,5,6')).toBe(21)
     })
