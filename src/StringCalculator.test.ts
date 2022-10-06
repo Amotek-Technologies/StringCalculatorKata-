@@ -6,23 +6,21 @@ const add = (input: string): number => {
     if (!input.includes(',')) {
         return +input
     }
-    input.split(',');
+    input.split(',')
 
-    const splitArraywithNewLine = input.split("\n").join().split(",");
-    console.log(splitArraywithNewLine);
+    const splitArrayWithNewLine = input.split("\n").join().split(",")
+    console.log(splitArrayWithNewLine)
 
     const splitArrayWithSlashes = input.split('//')
     console.log(splitArrayWithSlashes)
 
     let result = 0
 
-    for (let i = 0; i < splitArraywithNewLine.length; i++) {
-        result += +splitArraywithNewLine[i]
+    for (let i = 0; i < splitArrayWithNewLine.length; i++) {
+        result += +splitArrayWithNewLine[i]
     }
 
-
-
-    return result
+    // return result
 }
 
 describe('StringCalculator', () => {
@@ -51,7 +49,7 @@ describe('StringCalculator', () => {
         expect(add('1\n2,3,4,5,6')).toBe(21)
     })
 
-    it('custom delimeter', () => {
+    it('custom delimiter', () => {
         expect(add('//;\n;2;3;5')).toBe(10)
     })
 
